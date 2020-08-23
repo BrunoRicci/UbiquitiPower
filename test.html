@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test page</title>
+</head>
+<body>
+    
+    <form enctype="multipart/form-data" id="loginform" method="post" action="/login.cgi"></form>
+    <tbody><tr>
+		<td class="loginsep">
+				<input type="hidden" name="uri" id="uri" value="/index.cgi">
+				<table class="logintable" cellspacing="0" cellpadding="0" border="0" align="center">
+					<tbody><tr>
+						<td colspan="2" align="center">
+							<div id="errmsg" class="error">
+								
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">&nbsp;</td>
+					</tr>
+					<tr>
+						<td><label for="username">User Name:</label></td>
+						<td><input class="config" type="text" name="username" id="username"></td>
+					</tr>
+					<tr>
+						<td><label for="password">Password:</label></td>
+						<td><input class="config" type="password" name="password" id="password"></td>
+					</tr>
+					
+					<tr>
+						<td colspan="2">&nbsp;</td>
+					</tr>
+				</tbody></table>
+		</td>
+	</tr>
+
+	
+
+        <tr>
+		<td colspan="2" class="submit" align="right">
+			<input type="submit" value="Login" onclick="console.log('click')">
+		</td>
+	</tr>
+
+</tbody>
+
+
+</body>
+</html>
