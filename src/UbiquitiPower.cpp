@@ -8,8 +8,9 @@ const uint8_t fingerprint[20] = {0xF8,0xDD,0xE3,0xA6,0x8A,0x95,0x81,0x6C,0x06,0x
 
 
 int leerPotencia(void){
-  int signal_level = -1000;
+  int signal_level = -10000;
   HTTPSRedirect* client = new HTTPSRedirect(HTTP_PORT);
+  client->setCookie(CLIENT_COOKIE);
   // client->setPrintResponseBody(true);
 
   if(SECURE)
@@ -18,7 +19,7 @@ int leerPotencia(void){
     client->setInsecure();
   
   if (client->connect(HOST_NAME, HTTP_PORT) == 1) {
-    Serial.print("\nConnected to server.");
+    // Serial.print("\nConnected to server.");
 
     String body = (String)"username="+SERVER_USERNAME+"&password="+SERVER_PASS;
     client->setContentTypeHeader("application/x-www-form-urlencoded");
@@ -34,10 +35,9 @@ int leerPotencia(void){
     // Serial.print("\nResult:\n");
     // Serial.println(response);
 
-    if(response == "-")
-      response = "-1000";   //If no connected, set signal value to -1000. -> no connection value.
-    signal_level = response.toInt();
-  
+
+    signal_level = response.toInt();  
+    if(signal_level == 0) signal_level=-1000;
   }
   else
     Serial.println("Connection failed.");

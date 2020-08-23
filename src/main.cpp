@@ -28,12 +28,18 @@ void setup() {
   Serial.println(WiFi.localIP());
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  Serial.printf("\n Signal level: %d", leerPotencia());
 
 }
 
 
 void loop() {
+
+  if(WiFi.isConnected()){
+    Serial.printf("\n Signal level: %d", leerPotencia());
+  }
+  else Serial.print("\nNot connected.");
+  delay(500);
+
 
 }
 
