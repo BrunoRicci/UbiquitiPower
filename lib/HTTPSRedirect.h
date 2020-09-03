@@ -80,7 +80,7 @@ class HTTPSRedirect : public WiFiClientSecure {
     void setMaxRedirects(const unsigned int);
     
     void setContentTypeHeader(const char *);
-    void HTTPSRedirect::setCookie(String cookie);
+    void setCookie(String cookie);
 #ifdef OPTIMIZE_SPEED
     bool reConnectFinalEndpoint(void);
 #endif
