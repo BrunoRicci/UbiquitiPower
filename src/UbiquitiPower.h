@@ -1,7 +1,7 @@
 #ifndef _UBIQUITIPOWER_H
 #define _UBIQUITIPOWER_H
 
-
+#include <Arduino.h>
 #define SERVER_USERNAME "ubnt"              //Datos de login a la antena
 #define SERVER_PASS     "Roberto2410"       
 

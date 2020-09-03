@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include <ESP8266WiFi.h>
 #include <UbiquitiPower.h>
 
@@ -5,9 +6,6 @@
 // Fill ssid and password with your network credentials
 const char* ssid = "DATALOGGER SERVER";
 const char* password = "!UBA12345!";
-
-
-
 
 
 void setup() {
@@ -39,7 +37,6 @@ void loop() {
   }
   else Serial.print("\nNot connected.");
   delay(500);
-
 
 }
 

@@ -138,8 +138,9 @@ void HTTPSRedirect::createGetRequest(const String& url, const char* host){
   strcat(req, host);
   strcat(req, "\r\n");
   strcat(req, "User-Agent: ESP8266\r\n");
-  strcat(req, "Cookie: "+_clientCookie+"\r\n\r\n");
-
+  strcat(req, "Cookie: ");
+  strcat(req, _clientCookie);
+  strcat(req, "\r\n\r\n");
 
   _Request = req;  //-> Force bad request...
   // DPRINTLN(_Request);
@@ -466,8 +467,8 @@ void HTTPSRedirect::setContentTypeHeader(const char *type){
   _contentTypeHeader = type;
 }
 
-void HTTPSRedirect::setCookie(String cookie){
-  _clientCookie = cookie;
+void HTTPSRedirect::setCookie(const char* cookie){
+  strcpy(_clientCookie, cookie);
 }
 
 

@@ -19,7 +19,7 @@ class HTTPSRedirect : public WiFiClientSecure {
     bool _keepAlive;
     String _redirUrl;
     String _redirHost;
-    String _clientCookie;
+    char _clientCookie[100];
     unsigned int _maxRedirects;  // to-do
     const char* _contentTypeHeader;
     
@@ -80,7 +80,7 @@ class HTTPSRedirect : public WiFiClientSecure {
     void setMaxRedirects(const unsigned int);
     
     void setContentTypeHeader(const char *);
-    void setCookie(String cookie);
+    void setCookie(const char* cookie);
 #ifdef OPTIMIZE_SPEED
     bool reConnectFinalEndpoint(void);
 #endif
