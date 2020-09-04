@@ -18,7 +18,7 @@ int leerPotencia(void){
 
 
   //put no cookies.
-  
+    // if(client->connect(HOST_NAME,HTTP_PORT)){
     if(client->connect(HOST_NAME,HTTP_PORT)){
     //If connected...
     Serial.print("\n Connected to server.\n");
@@ -56,6 +56,7 @@ int leerPotencia(void){
     request += "Host: "+ (String)HOST_NAME + "\r\n";
     request += "Accept: */*" + (String)"\r\n";
     request += "Connection: keep-alive" + (String)"\r\n";
+    request += "Cookie: "+ (String)CLIENT_COOKIE +"\r\n";
     Serial.print("\nHTTP request:\n\n");
     Serial.println(request);
     client->println(request);

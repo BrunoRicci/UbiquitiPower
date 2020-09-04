@@ -16,6 +16,7 @@ void setup() {
   Serial.println(ssid);
 
   WiFi.begin(ssid, password);
+
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
@@ -37,7 +38,6 @@ void loop() {
   }
   else Serial.print("\nNot connected.");
   delay(500);
-
 }
 
 
