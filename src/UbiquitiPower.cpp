@@ -24,7 +24,7 @@ int leerPotencia(void){
     Serial.print("\n Connected to server.\n");
     // send HTTP request header
 
-    String pd = "username=ubnt&password=Roberto2410";
+    String pd = (String)"username="+SERVER_USERNAME+"&password="+SERVER_PASS;
     String request = "";
     request += (String)"POST " + "/login.cgi?uri=%2Fstatus.cgi" + " HTTP/1.1\r\n";
     request += "Host: "+ (String)HOST_NAME + "\r\n";
@@ -35,7 +35,8 @@ int leerPotencia(void){
     request += "Content-Type: application/x-www-form-urlencoded" + (String)"\r\n";
     request += "Cookie: "+ (String)CLIENT_COOKIE +"\r\n";
     request += "Content-Length: " + (String)(pd.length()) + (String)"\r\n\r\n";   //1 empry line  before data body is compulsory.
-    request += (String)"username="+SERVER_USERNAME+"&password="+SERVER_PASS+(String)"\r\n\r\n";  //Last line feed is put by println method.
+    request += pd;
+    request += (String)"\r\n\r\n";  //Last line feed is put by println method.
 
     Serial.print("\nHTTP request:\n\n");
     Serial.println(request);
