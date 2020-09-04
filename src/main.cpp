@@ -4,8 +4,8 @@
 
 
 // Fill ssid and password with your network credentials
-const char* ssid = "DATALOGGER SERVER";
-const char* password = "!UBA12345!";
+const char* ssid = "Fibertel WiFi866 2.4GHz";
+const char* password = "01416592736";
 
 
 void setup() {
@@ -14,7 +14,7 @@ void setup() {
 
   Serial.print("Connecting to wifi: ");
   Serial.println(ssid);
-
+leerPotencia();
   WiFi.begin(ssid, password);
 
   while (WiFi.status() != WL_CONNECTED) {
@@ -27,6 +27,7 @@ void setup() {
   Serial.println(WiFi.localIP());
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    // String pd = "username_login=admin&password_login=cisco&LanguageSelect=en&login=Log+In";
 
 }
 

@@ -10,7 +10,7 @@ int leerPotencia(void){
 
   int signal_level = -10000;
   String response = "";
-  WiFiClientSecure *client;
+  WiFiClientSecure *client = new WiFiClientSecure;
   if(SECURE)
     client->setFingerprint(fingerprint);
   else
@@ -42,7 +42,7 @@ int leerPotencia(void){
     Serial.println(request);
     client->println(request);
 
-    delay(500);
+    delay(2000);
     Serial.print("\nServer response:\n");
     response = "";
     while(client->available()){
@@ -79,7 +79,7 @@ int leerPotencia(void){
 
 
 
-    delay(2000);
+    delay(1000);
 
     // response = client->getResponseBody();
     // uint16 i = response.indexOf("\"wireless\":");
